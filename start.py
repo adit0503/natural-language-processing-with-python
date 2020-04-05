@@ -1,8 +1,9 @@
 import nltk
 from nltk.book import *
+from nltk.tokenize import word_tokenize
 
-example_sent = " ".join(sent1+sent2+sent3+sent4)
-print(example_sent)
+example_sentence = set(text1)
+len(example_sentence)#19317
 
 text1
 type(text1)

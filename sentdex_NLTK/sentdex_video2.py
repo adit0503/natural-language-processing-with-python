@@ -9,10 +9,14 @@ tokenized = word_tokenize(example_sentence)
 
 stop_words = set(stopwords.words('english'))
 
-filtered_sentence = []
+filtered_sentence = set()
 
 for t in tokenized:
-    if t not in stop_words:
-        filtered_sentence.append(t)
-print(filtered_sentence)
-print(len(tokenized)-len(filtered_sentence))
+    t = t.lower()
+    if (t not in stop_words) and t.isalnum():
+        filtered_sentence.add(t)
+print(list(filtered_sentence))
+# ['scientific', 'industry', 'interaction', 'analysis', 'range', 'areas', 'many', 'intelligence', 'reasons', 'theories', 'technologies', 'business', 'known', 'linguistics', 'artificial', 'name', 'nlp', 'within', 'new', 'cultural', 'information', 'development', 'social', 'working', 'methods', 'web', 'academia', 'important', 'computing', 'growth', 'deployed', 'economic', 'variety', 'reason', 'knowledge', 'includes', 'humanities', 'computer', 'experiencing', 'wide', 'corpus', 'rapid', 'software', 'people', 'language', 'science']
+
+
+print(len(tokenized),len(filtered_sentence)) #114,46
